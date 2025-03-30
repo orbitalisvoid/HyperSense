@@ -76,43 +76,43 @@ CMakeFiles/subscription.dir/src/feature_manager.cpp.o: CMakeFiles/subscription.d
 CMakeFiles/subscription.dir/src/feature_manager.cpp.o: /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/feature_manager.cpp
 CMakeFiles/subscription.dir/src/feature_manager.cpp.o: CMakeFiles/subscription.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/subscription.dir/src/feature_manager.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/subscription.dir/src/feature_manager.cpp.o -MF CMakeFiles/subscription.dir/src/feature_manager.cpp.o.d -o CMakeFiles/subscription.dir/src/feature_manager.cpp.o -c /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/feature_manager.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/subscription.dir/src/feature_manager.cpp.o -MF CMakeFiles/subscription.dir/src/feature_manager.cpp.o.d -o CMakeFiles/subscription.dir/src/feature_manager.cpp.o -c /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/feature_manager.cpp
 
 CMakeFiles/subscription.dir/src/feature_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/subscription.dir/src/feature_manager.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/feature_manager.cpp > CMakeFiles/subscription.dir/src/feature_manager.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/feature_manager.cpp > CMakeFiles/subscription.dir/src/feature_manager.cpp.i
 
 CMakeFiles/subscription.dir/src/feature_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/subscription.dir/src/feature_manager.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/feature_manager.cpp -o CMakeFiles/subscription.dir/src/feature_manager.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/feature_manager.cpp -o CMakeFiles/subscription.dir/src/feature_manager.cpp.s
 
 CMakeFiles/subscription.dir/src/main.cpp.o: CMakeFiles/subscription.dir/flags.make
 CMakeFiles/subscription.dir/src/main.cpp.o: /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/main.cpp
 CMakeFiles/subscription.dir/src/main.cpp.o: CMakeFiles/subscription.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/subscription.dir/src/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/subscription.dir/src/main.cpp.o -MF CMakeFiles/subscription.dir/src/main.cpp.o.d -o CMakeFiles/subscription.dir/src/main.cpp.o -c /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/main.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/subscription.dir/src/main.cpp.o -MF CMakeFiles/subscription.dir/src/main.cpp.o.d -o CMakeFiles/subscription.dir/src/main.cpp.o -c /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/main.cpp
 
 CMakeFiles/subscription.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/subscription.dir/src/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/main.cpp > CMakeFiles/subscription.dir/src/main.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/main.cpp > CMakeFiles/subscription.dir/src/main.cpp.i
 
 CMakeFiles/subscription.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/subscription.dir/src/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/main.cpp -o CMakeFiles/subscription.dir/src/main.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/main.cpp -o CMakeFiles/subscription.dir/src/main.cpp.s
 
 CMakeFiles/subscription.dir/src/plugin_loader.cpp.o: CMakeFiles/subscription.dir/flags.make
 CMakeFiles/subscription.dir/src/plugin_loader.cpp.o: /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/plugin_loader.cpp
 CMakeFiles/subscription.dir/src/plugin_loader.cpp.o: CMakeFiles/subscription.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/subscription.dir/src/plugin_loader.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/subscription.dir/src/plugin_loader.cpp.o -MF CMakeFiles/subscription.dir/src/plugin_loader.cpp.o.d -o CMakeFiles/subscription.dir/src/plugin_loader.cpp.o -c /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/plugin_loader.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/subscription.dir/src/plugin_loader.cpp.o -MF CMakeFiles/subscription.dir/src/plugin_loader.cpp.o.d -o CMakeFiles/subscription.dir/src/plugin_loader.cpp.o -c /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/plugin_loader.cpp
 
 CMakeFiles/subscription.dir/src/plugin_loader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/subscription.dir/src/plugin_loader.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/plugin_loader.cpp > CMakeFiles/subscription.dir/src/plugin_loader.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/plugin_loader.cpp > CMakeFiles/subscription.dir/src/plugin_loader.cpp.i
 
 CMakeFiles/subscription.dir/src/plugin_loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/subscription.dir/src/plugin_loader.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/plugin_loader.cpp -o CMakeFiles/subscription.dir/src/plugin_loader.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/src/plugin_loader.cpp -o CMakeFiles/subscription.dir/src/plugin_loader.cpp.s
 
 # Object files for target subscription
 subscription_OBJECTS = \

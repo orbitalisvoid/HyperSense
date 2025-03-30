@@ -76,15 +76,15 @@ CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.o: CMakeFiles/kalman_
 CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.o: /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/kalman_filter.cpp
 CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.o: CMakeFiles/kalman_filter.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.o -MF CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.o.d -o CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.o -c /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/kalman_filter.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.o -MF CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.o.d -o CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.o -c /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/kalman_filter.cpp
 
 CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/kalman_filter.cpp > CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/kalman_filter.cpp > CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.i
 
 CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/kalman_filter.cpp -o CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/kalman_filter.cpp -o CMakeFiles/kalman_filter.dir/plugins_src/kalman_filter.cpp.s
 
 # Object files for target kalman_filter
 kalman_filter_OBJECTS = \

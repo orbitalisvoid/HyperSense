@@ -76,15 +76,15 @@ CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.o: CMakeFiles/face_
 CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.o: /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/face_detection.cpp
 CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.o: CMakeFiles/face_detection.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.o -MF CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.o.d -o CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.o -c /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/face_detection.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.o -MF CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.o.d -o CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.o -c /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/face_detection.cpp
 
 CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/face_detection.cpp > CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/face_detection.cpp > CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.i
 
 CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/face_detection.cpp -o CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins_src/face_detection.cpp -o CMakeFiles/face_detection.dir/plugins_src/face_detection.cpp.s
 
 # Object files for target face_detection
 face_detection_OBJECTS = \
