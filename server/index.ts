@@ -1,4 +1,5 @@
-const express = require("express");
+import express, { type Response, type Request } from "express";
+
 const app = express();
 
 const port = 9001;
@@ -11,10 +12,13 @@ const subscriptionData = {
   face_detection: false,
 };
 
-app.get("/api/get_subscription", (req, res) => {
-  console.log("GET /api/get_subscription");
-  return res.json(subscriptionData);
-});
+app.get(
+  "/api/get_subscription",
+  async (req: Request, res: Response): Promise<void> => {
+    console.log("GET /api/get_subscription");
+    res.json(subscriptionData);
+  }
+);
 
 app.listen(port, () => {
   console.log(`Feature management API running at http://localhost:${port}`);

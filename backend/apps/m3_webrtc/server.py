@@ -27,7 +27,6 @@ class StreamTrack(MediaStreamTrack):
         """Fetch frame from the FFmpeg ingestion queue."""
         return await self._in.frames_q.get()
 
-
 async def handle_signaling(websocket: ServerConnection):
     peer_connection = RTCPeerConnection()
     logger.info(peer_connection)
