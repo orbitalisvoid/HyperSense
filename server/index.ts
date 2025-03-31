@@ -1,6 +1,6 @@
-import express, { type Response, type Request } from "express";
+import express, { type Response, type Request, type Express } from "express";
 
-const app = express();
+const app: Express = express();
 
 const port = 9001;
 
