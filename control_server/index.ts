@@ -11,7 +11,7 @@ app.use(express.json());
 
 const subscriptionData = {
   kalman_filter: false,
-  optical_flow: false,
+  optical_flow: true,
   face_detection: false,
 };
 
