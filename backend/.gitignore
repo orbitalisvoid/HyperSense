@@ -1,0 +1,5 @@
+build
+tools/*
+!tools/README.md
+
+pkgs/opencv

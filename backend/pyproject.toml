@@ -1,0 +1,27 @@
+[project]
+name = "HyperSight"
+version = "0.0.0"
+authors = [{ name = "tungp99", email = "tung.cloud@outlook.com" }]
+requires-python = ">=3.13,<3.14"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["apps/*", "pkgs/*"]
+exclude = ["pkgs/opencv"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["apps/m2_processing_node", "pkgs/configuration"]
+
+[project.scripts]
+start-node = "m2_processing_node.frame_processor:main"
+start-webrtc = "m3_webrtc.server:main"
+test = "m3_webrtc.gstreamer:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pyright]
+exclude = [".venv"]
+venvPath = "."
+venv = ".venv"
