@@ -7,7 +7,6 @@ from configuration import load_config
 # TODO: resolution / tech debt
 width, height = 640, 480
 
-
 def main():
     config = load_config(str(Path(__file__).parent / "config.yaml"))
 

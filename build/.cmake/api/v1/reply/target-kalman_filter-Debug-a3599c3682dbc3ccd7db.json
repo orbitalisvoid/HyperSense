@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins/libface_detection.dylib"
+			"path" : "/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/plugins/libkalman_filter.dylib"
 		}
 	],
 	"backtrace" : 1,
@@ -49,13 +49,13 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -Wall -Wextra -stdlib=libc++ -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC"
+					"fragment" : " -Wall -Wextra -stdlib=libc++ -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"define" : "face_detection_EXPORTS"
+					"define" : "kalman_filter_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -98,7 +98,7 @@
 			]
 		}
 	],
-	"id" : "face_detection::@6890427a1f51a3e7e1df",
+	"id" : "kalman_filter::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -399,8 +399,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "face_detection",
-	"nameOnDisk" : "libface_detection.dylib",
+	"name" : "kalman_filter",
+	"nameOnDisk" : "libkalman_filter.dylib",
 	"paths" : 
 	{
 		"build" : ".",
@@ -421,7 +421,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "plugins_src/face_detection.cpp",
+			"path" : "plugins_src/kalman_filter.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -6,16 +6,15 @@ from pathlib import Path
 import websockets
 from aiortc import RTCPeerConnection, RTCSessionDescription
 from aiortc.mediastreams import MediaStreamTrack
-from configuration import load_config
 from websockets import ServerConnection
 
 from .stream_ingest import VideoStreamIngest
+from configuration import load_config
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("HyperSight_WebRTC")
 
 config = load_config(str(Path(__file__).parent / "config.yaml"))
-
 
 class StreamTrack(MediaStreamTrack):
     kind = "video"

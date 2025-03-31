@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.10"
@@ -22,7 +22,7 @@
 					]
 				}
 			],
-			"name" : "",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -45,28 +45,28 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "face_detection::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-face_detection-886bd2416aa307570701.json",
+					"jsonFile" : "target-face_detection-Debug-80712382682d62e7665e.json",
 					"name" : "face_detection",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "kalman_filter::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-kalman_filter-a9b8afb9ed0edb471412.json",
+					"jsonFile" : "target-kalman_filter-Debug-a3599c3682dbc3ccd7db.json",
 					"name" : "kalman_filter",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "optical_flow::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-optical_flow-ba459a1eeb747c4b5a32.json",
+					"jsonFile" : "target-optical_flow-Debug-a9493d665807d32baa68.json",
 					"name" : "optical_flow",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "subscription::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-subscription-23cb92f565efd6d5dfb0.json",
+					"jsonFile" : "target-subscription-Debug-620f1ee07e67b100ee65.json",
 					"name" : "subscription",
 					"projectIndex" : 0
 				}

@@ -9,7 +9,6 @@ width, height = 640, 480
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("HyperSight_WebRTC.RTPIngest")
 
-
 class VideoStreamIngest:
     def __init__(self, in_port: int):
         self.in_port = in_port
