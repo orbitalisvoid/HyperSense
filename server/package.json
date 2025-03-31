@@ -10,7 +10,9 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@types/dotenv": "^8.2.3",
     "@types/express": "^5.0.1",
+    "dotenv": "^16.4.7",
     "express": "^5.1.0"
   }
 }
