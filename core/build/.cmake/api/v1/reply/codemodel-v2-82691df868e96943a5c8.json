@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "subscription",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "face_detection::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-face_detection-Debug-80712382682d62e7665e.json",
+					"name" : "face_detection",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kalman_filter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kalman_filter-Debug-a3599c3682dbc3ccd7db.json",
+					"name" : "kalman_filter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "optical_flow::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-optical_flow-Debug-a9493d665807d32baa68.json",
+					"name" : "optical_flow",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "subscription::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-subscription-Debug-620f1ee07e67b100ee65.json",
+					"name" : "subscription",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build",
+		"source" : "/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

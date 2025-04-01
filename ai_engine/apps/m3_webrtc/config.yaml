@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+stream_ports:
+  - 50000
+  - 50001
