@@ -3,63 +3,99 @@ import json
 import logging
 from pathlib import Path
 
-import websockets
-from aiortc import RTCPeerConnection, RTCSessionDescription
-from aiortc.mediastreams import MediaStreamTrack
-from websockets import ServerConnection
+import aiohttp_cors
+from aiohttp import web
+from aiortc import RTCPeerConnection, RTCSessionDescription, VideoStreamTrack
+from av import VideoFrame
+from shared.configuration import load_config
 
-from .stream_ingest import VideoStreamIngest
-from configuration import load_config
+from .stream_ingest import Pipeline, StreamIngest
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("HyperSight_WebRTC")
 
-config = load_config(str(Path(__file__).parent / "config.yaml"))
 
-class StreamTrack(MediaStreamTrack):
-    kind = "video"
-
-    def __init__(self, _in: VideoStreamIngest):
+class StreamTrack(VideoStreamTrack):
+    def __init__(self, _in: Pipeline):
         super().__init__()
         self._in = _in
 
     async def recv(self):
-        """Fetch frame from the FFmpeg ingestion queue."""
-        return await self._in.frames_q.get()
+        while self._in.latest_frame is None:
+            await asyncio.sleep(0.01)
 
-async def handle_signaling(websocket: ServerConnection):
-    peer_connection = RTCPeerConnection()
-    logger.info(peer_connection)
+        frame = VideoFrame.from_ndarray(self._in.latest_frame, format="rgb24")
+        frame.pts, frame.time_base = await self.next_timestamp()
+        return frame
 
-    # TODO: incorporate New York Configurator to discover ports -> DevOps config.yaml
-    rtp_ingests = {VideoStreamIngest(50000)}
-    for ri in rtp_ingests:
-        ri.start()
 
-    tracks = (StreamTrack(ri) for ri in rtp_ingests)
+pcs = set[RTCPeerConnection]()
+tracks = set[StreamTrack]()
+stream_ingest: StreamIngest
+
+
+async def on_shutdown(app: web.Application):
+    global pcs, stream_ingest
+
+    stream_ingest.stop()
+
+    coros = [pc.close() for pc in pcs]
+    await asyncio.gather(*coros)
+    pcs.clear()
+
+
+async def offer_handler(request: web.Request):
+    global tracks
+
+    params = await request.json()
+    offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
+    pc = RTCPeerConnection()
+    pcs.add(pc)
+
+    @pc.on("connectionstatechange")
+    async def on_connectionstatechange():
+        logger.info("Connection state is %s" % pc.connectionState)
+        if pc.connectionState == "failed":
+            await pc.close()
+            pcs.discard(pc)
+
     for t in tracks:
-        peer_connection.addTrack(t)
+        pc.addTrack(t)
 
-    async for message in websocket:
-        data = json.loads(message)
-        logger.debug(data)
+    await pc.setRemoteDescription(offer)
 
-        if data["type"] == "offer":
-            offer = RTCSessionDescription(sdp=data["sdp"], type="offer")
-            await peer_connection.setRemoteDescription(offer)
+    answer = await pc.createAnswer()
+    await pc.setLocalDescription(answer)
 
-            answer = await peer_connection.createAnswer()
-            await peer_connection.setLocalDescription(answer)
-
-            await websocket.send(
-                json.dumps({"type": "answer", "sdp": peer_connection.localDescription.sdp})
-            )
-
-
-async def start_server():
-    async with websockets.serve(handle_signaling, "localhost", config["server"]["port"]):
-        await asyncio.Future()
+    return web.Response(
+        content_type="application/json",
+        text=json.dumps({"sdp": pc.localDescription.sdp, "type": pc.localDescription.type}),
+    )
 
 
 def main():
-    asyncio.run(start_server())
+    global stream_ingest, tracks
+
+    config = load_config(str(Path(__file__).parent / "config.yml"))
+
+    # TODO: incorporate New York Configurator to discover streams
+    stream_ingest = StreamIngest({"rtsp://localhost:9554/cam1"})
+    stream_ingest.start()
+
+    for p in stream_ingest.pipelines:
+        tracks.add(StreamTrack(p))
+
+    app = web.Application()
+    cors = aiohttp_cors.setup(
+        app,
+        defaults={  # TODO: only for testing
+            "*": aiohttp_cors.ResourceOptions(
+                allow_credentials=True,
+                expose_headers="*",
+                allow_headers="*",
+            )
+        },
+    )
+    app.on_shutdown.append(on_shutdown)
+    cors.add(app.router.add_post("/offer", offer_handler))
+    web.run_app(app, host="localhost", port=config["server"]["port"])

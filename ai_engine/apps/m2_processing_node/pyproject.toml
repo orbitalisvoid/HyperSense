@@ -3,7 +3,10 @@ name = "HyperSight_ProcessingNode"
 version = "0.0.0"
 authors = [{ name = "tungp99", email = "tung.cloud@outlook.com" }]
 requires-python = ">=3.13,<3.14"
-dependencies = ["HyperSight_Configuration"]
+dependencies = [
+    "HyperSight_Shared",
+    "opencv-python>=4.11.0.86",
+]
 
 [tool.uv.sources]
-HyperSight_Configuration = { workspace = true }
+HyperSight_Shared = { workspace = true }

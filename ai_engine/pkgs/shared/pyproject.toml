@@ -1,5 +1,5 @@
 [project]
-name = "HyperSight_Configuration"
+name = "HyperSight_Shared"
 version = "0.0.0"
 authors = [{ name = "tungp99", email = "tung.cloud@outlook.com" }]
 requires-python = ">=3.13,<3.14"
