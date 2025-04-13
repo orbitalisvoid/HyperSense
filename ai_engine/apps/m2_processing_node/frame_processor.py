@@ -5,14 +5,13 @@ from pathlib import Path
 from threading import Thread
 
 import cv2
-from shared.configuration import load_config
+from pkgs.shared.configuration import load_config
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("HyperSight_WebRTC")
 
 # TECHDEBT:
 width, height, fps = 480, 640, 25
-
 
 def capture(uri_source: str, uri_sink: str):
     global width, height, fps

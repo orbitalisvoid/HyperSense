@@ -7,7 +7,7 @@ import aiohttp_cors
 from aiohttp import web
 from aiortc import RTCPeerConnection, RTCSessionDescription, VideoStreamTrack
 from av import VideoFrame
-from shared.configuration import load_config
+from pkgs.shared.configuration import load_config
 
 from .stream_ingest import Pipeline, StreamIngest
 

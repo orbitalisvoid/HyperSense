@@ -1,12 +1,5 @@
 ```sh
 $ uv sync --all-packages
-<<<<<<< HEAD
-
-$ uv run start-node
-
-$ uv run start-webrtc
-```
-=======
 ```
 
 # M2_Processing_Node
@@ -58,4 +51,3 @@ $ uv run start-webrtc
 ### test-client.html has a quick&dirty sample code to demonstrate.
 
 Firefox has a bug: https://github.com/aiortc/aiortc/issues/481, you should open the file on another browser.
->>>>>>> 21b5507e49a599dea49aa1b91af25f847050b300
