@@ -34,7 +34,7 @@ namespace
         return result;
     }
 }
- 
+
 extern "C" CPluginResult processFrame(const unsigned char *data, int width, int height, int channels)
 {
     CPluginResult result = {nullptr, 0, 0, 0, 0};
