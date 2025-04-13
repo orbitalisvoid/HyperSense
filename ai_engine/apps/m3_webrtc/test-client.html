@@ -1,53 +1,62 @@
 <!doctype html>
 <html>
-  <body>
-    <h2>WebRTC RTP Stream</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebRTC</title>
+  </head>
 
+  <body>
     <div id="video-container"></div>
 
     <script>
-      const pc = new RTCPeerConnection();
       const container = document.getElementById("video-container");
-      const ws = new WebSocket("ws://localhost:8080");
+      const pc = new RTCPeerConnection();
+      pc.addTransceiver("video", { direction: "recvonly" });
 
-      ws.onmessage = async (event) => {
-        const data = JSON.parse(event.data);
-        if (data.type === "answer") {
-          await pc.setRemoteDescription(new RTCSessionDescription(data));
-        }
+      pc.ontrack = (event) => {
+        console.log(event);
+        const video = document.createElement("video");
+        video.srcObject = event.streams[0];
+        video.autoplay = true;
+        video.controls = true;
+        container.appendChild(video);
       };
 
-      async function startConnection() {
+      async function start() {
         const offer = await pc.createOffer();
         await pc.setLocalDescription(offer);
 
-        ws.send(
-          JSON.stringify({
-            type: "offer",
-            sdp: offer.sdp,
-          }),
-        );
-
-        pc.onicecandidate = (event) => {
-          if (event.candidate) {
-            ws.send(
-              JSON.stringify({
-                type: "candidate",
-                candidate: event.candidate,
-              }),
-            );
+        await new Promise((resolve) => {
+          if (pc.iceGatheringState === "complete") {
+            resolve();
+          } else {
+            const checkState = () => {
+              if (pc.iceGatheringState === "complete") {
+                pc.removeEventListener("icegatheringstatechange", checkState);
+                resolve();
+              }
+            };
+            pc.addEventListener("icegatheringstatechange", checkState);
           }
-        };
+        });
 
-        pc.ontrack = (event) => {
-          const video = document.createElement("video");
-          video.srcObject = event.streams[0];
-          video.autoplay = true;
-          container.appendChild(video);
-        };
+        const response = await fetch("http://localhost:9000/offer", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            sdp: pc.localDescription.sdp,
+            type: pc.localDescription.type,
+          }),
+        });
+
+        const answer = await response.json();
+        await pc.setRemoteDescription(answer);
       }
 
-      ws.onopen = startConnection;
+      start()
+        .then(() => console.log("done"))
+        .catch(console.error);
     </script>
   </body>
 </html>

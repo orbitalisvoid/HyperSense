@@ -5,18 +5,12 @@ authors = [{ name = "tungp99", email = "tung.cloud@outlook.com" }]
 requires-python = ">=3.13,<3.14"
 dependencies = [
   "aiohttp>=3.11.14",
+  "aiohttp-cors>=0.8.1",
   "aiortc>=1.11.0",
-  "av>=14.2.0",
-  "ffmpeg>=1.4",
-  "ffmpeg-python>=0.2.0",
-  "HyperSight_Configuration",
-  "numpy>=2.2.4",
-  "opencv-gst-rtsp-server>=0.1.4",
-  "pygi>=1.0.3",
+  "HyperSight_Shared",
   "pygobject>=3.52.3",
-  "pyyaml>=6.0.2",
-  "websockets>=15.0.1",
+  "numpy>=2.2.4",
 ]
 
 [tool.uv.sources]
-HyperSight_Configuration = { workspace = true }
+HyperSight_Shared = { workspace = true }

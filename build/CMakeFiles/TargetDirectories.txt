@@ -1,6 +1,0 @@
-/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles/subscription.dir
-/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles/face_detection.dir
-/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles/kalman_filter.dir
-/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles/optical_flow.dir
-/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles/edit_cache.dir
-/Users/lazycodebaker/Documents/Code/Personal/C++/HyperSight/build/CMakeFiles/rebuild_cache.dir

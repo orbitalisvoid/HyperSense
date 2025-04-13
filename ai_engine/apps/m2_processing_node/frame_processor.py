@@ -1,33 +1,71 @@
-# import subprocess
+import logging
+import subprocess
+import time
 from pathlib import Path
+from threading import Thread
 
-# from sys import stdin
-from configuration import load_config
+import cv2
+from shared.configuration import load_config
 
-# TODO: resolution / tech debt
-width, height = 640, 480
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("HyperSight_WebRTC")
 
-def main():
-    config = load_config(str(Path(__file__).parent / "config.yaml"))
+# TECHDEBT:
+width, height, fps = 480, 640, 25
 
-    # TODO: not working
+
+def capture(uri_source: str, uri_sink: str):
+    global width, height, fps
+
+    _in = cv2.VideoCapture(uri_source, cv2.CAP_FFMPEG)
+
     ffmpeg_cmd = [
         "ffmpeg",
-        "-i rtp://0.0.0.0:5006",  # uri to receive
-        "-f rawvideo",  # Output format: raw video
-        "-pix_fmt bgr24",  # Pixel format: BGR (for OpenCV)
-        f"-s {width}x{height}",  # Frame size (match your stream)
+        "-s",
+        f"{width}x{height}",
+        "-r",
+        f"{fps}",
+        "-i",
         "-",
+        "-an",
+        "-pix_fmt",
+        "rgb24",
+        "-c:v",
+        "libx264",
+        "rtsp://localhost:9554/cam1",
     ]
+    process = subprocess.Popen(ffmpeg_cmd, stdin=subprocess.PIPE)
 
-    # process = subprocess.Popen(ffmpeg_cmd, stdout=subprocess.PIPE, bufsize=10**8)
+    while True:
+        ret, frame = _in.read()
+        if not ret:
+            break
 
-    # while True:
-    #     raw_frame = stdin.read(frame_width * frame_height * 3)
+        # TODO: process here
+        processed_frame = frame.copy()
 
-    #     if not raw_frame:
-    #         break
+        process.stdin.write(processed_frame.tobytes())
+        process.stdin.flush()
 
-    # TODO: process here
+        # BUG: it still happens, maybe the while loop isn't sufficient
+        # try to mitigate duplicated frame, because while loop is faster
+        time.sleep(1.0 / fps)
 
-    # TODO: send processed frame to webrtc
+    _in.release()
+    process.stdin.close()
+    process.wait()
+
+
+def main():
+    config = load_config(str(Path(__file__).parent / "config.yml"))
+
+    uris = {("rtsp://localhost:8554/cam1", "rtsp://localhost:9554/cam1")}
+
+    threads = set[Thread]()
+    for uri in uris:
+        t = Thread(target=capture, args=(uri[0], uri[1]))
+        threads.add(t)
+        t.start()
+
+    for t in threads:
+        t.join()
