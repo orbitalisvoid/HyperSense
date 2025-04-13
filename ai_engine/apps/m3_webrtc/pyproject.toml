@@ -1,0 +1,16 @@
+[project]
+name = "HyperSight_WebRTC"
+version = "0.0.0"
+authors = [{ name = "tungp99", email = "tung.cloud@outlook.com" }]
+requires-python = ">=3.13,<3.14"
+dependencies = [
+  "aiohttp>=3.11.14",
+  "aiohttp-cors>=0.8.1",
+  "aiortc>=1.11.0",
+  "HyperSight_Shared",
+  "pygobject>=3.52.3",
+  "numpy>=2.2.4",
+]
+
+[tool.uv.sources]
+HyperSight_Shared = { workspace = true }

@@ -1,0 +1,6 @@
+server:
+  port: 9000
+
+stream_ports:
+  - 50000
+  - 50001
